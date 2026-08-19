@@ -123,11 +123,6 @@ npm run dev
 
 Visit **http://localhost:5173** to view the application in your browser!
 
----
-
-## 📸 Screenshots
-
-*(Add screenshots of your beautiful dark UI, product grids, and checkout flow here)*
 
 ---
 
