@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-white/10;
+  }
+
+  body {
+    @apply bg-base text-text-primary antialiased;
+    font-feature-settings: 'cv11', 'ss01';
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(232, 135, 58, 0.3);
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(232, 135, 58, 0.5);
+  }
+
+  *:focus-visible {
+    @apply outline-none ring-2 ring-copper ring-offset-2 ring-offset-base;
+  }
+
+  ::selection {
+    background: rgba(232, 135, 58, 0.3);
+    color: #F5F5F2;
+  }
+}
+
+@layer components {
+  .surface {
+    @apply bg-surface backdrop-blur-xl border border-white/10 rounded-2xl;
+  }
+
+  .btn-primary {
+    @apply bg-copper text-white font-semibold px-6 py-3 rounded-xl
+           hover:bg-copper-light active:scale-95
+           transition-all duration-300 ease-smooth
+           shadow-glow-copper hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-electric text-white font-semibold px-6 py-3 rounded-xl
+           hover:bg-electric-light active:scale-95
+           transition-all duration-300 ease-smooth
+           shadow-glow-electric hover:shadow-lg;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent border border-white/10 text-text-primary font-semibold px-6 py-3 rounded-xl
+           hover:bg-white/5 active:scale-95
+           transition-all duration-300 ease-smooth;
+  }
+
+  .input-field {
+    @apply w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3
+           text-text-primary placeholder-text-muted
+           focus:outline-none focus:ring-2 focus:ring-copper focus:border-transparent
+           transition-all duration-300;
+  }
+
+  .line-clamp-1 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+  }
+
+  .line-clamp-2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
